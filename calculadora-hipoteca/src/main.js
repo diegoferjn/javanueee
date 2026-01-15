@@ -1,7 +1,7 @@
 function init() {
   console.log("Iniciando aplicación...");
 
-  // --- Ejercicio 2: variables primitivas ---
+  // Variables primitivas (tal cual pide el enunciado)
   let precioVivienda = 0;
   let porcentajeFinanciacion = 80;
   let isFavorite = false;
@@ -10,6 +10,7 @@ function init() {
   let esFavorito = false;
   let precio = 200000;
 
+  // Imprimir cada variable por separado
   console.log(precioVivienda);
   console.log(porcentajeFinanciacion);
   console.log(isFavorite);
@@ -18,11 +19,10 @@ function init() {
   console.log(esFavorito);
   console.log(precio);
 
-  // Conversión a string
-  let precioString = precio.toString();
-  console.log(precioString);
+  // Convertir precio a string con toString() e imprimirlo
+  console.log(precio.toString());
 
-  // --- Ejercicio 2: formulario ---
+  // Formulario: seleccionar y añadir listener submit en init()
   const form = document.getElementById("calc-form");
   form.addEventListener("submit", handleFormSubmit);
 
@@ -32,6 +32,7 @@ function init() {
 function handleFormSubmit(event) {
   event.preventDefault();
 
+  // Obtener valores con FormData
   const formData = new FormData(event.target);
 
   const precioVivienda = parseFloat(formData.get("precio-vivienda"));
@@ -40,6 +41,7 @@ function handleFormSubmit(event) {
   const interes = parseFloat(formData.get("interes"));
   const fechaInicio = formData.get("fecha-inicio");
 
+  // Imprimir valores
   console.log(precioVivienda);
   console.log(porcentajeFinanciacion);
   console.log(plazo);
